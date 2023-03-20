@@ -1,0 +1,95 @@
+<div class="drag-box" cdkDrag>
+  <div class="drag-head">
+    <span class="head">{{ asset.asset_title }}</span>
+    <i
+      class="ri-information-fill close"
+      (click)="setOpenId(asset.asset_id)"
+    ></i>
+  </div>
+  <div class="description" *ngIf="openId !== asset.asset_id">
+    <b> Description</b> : {{ asset.asset_description }}
+  </div>
+
+  <iframe
+    width="560"
+    height="315"
+    [src]="getTrusted(asset.asset_content)"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    *ngIf="asset.asset_id == 18883"
+  ></iframe>
+
+  <div class="threadBuilder" *ngIf="asset.asset_id == 18884">
+    <mat-accordion style="width: 100%; padding: 0">
+      <mat-expansion-panel style="width: 100%; padding: 0">
+        <mat-expansion-panel-header style="background-color: #fffff2">
+          <mat-panel-title style="font-size: 1rem; font-weight: 600">
+            Thread 1
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="expansionCard">
+          <div class="subthread">
+            <p>sub thread 1</p>
+            <input type="text" placeholder="Enter Text Here" />
+          </div>
+          <div class="subthread">
+            <p>Sub Interpretation 1</p>
+            <input type="text" placeholder="Enter Text Here" />
+          </div>
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin: 2rem 0;
+              width: 100%;
+            "
+          >
+            <div class="contIcons">
+              <img src="assets/icons/bulb.svg" />
+              <img src="assets/icons/message.svg" />
+              <img src="assets/icons/info.svg" />
+              <img src="assets/icons/flower.svg" />
+            </div>
+            <div class="selectCategory">
+              <select name="" id="">
+                <option value="value1">Select Process</option>
+                <option value="value1">Value</option>
+
+                <option value="value1">Value</option>
+                <option value="value1">Value</option>
+              </select>
+              <select name="" id="">
+                <option value="value1">Select Category</option>
+                <option value="value1">Value</option>
+
+                <option value="value1">Value</option>
+                <option value="value1">Value</option>
+              </select>
+            </div>
+          </div>
+
+          <button id="addST"><i class="ri-add-fill"></i> Sub Thread</button>
+          <div class="subthread" style="width: 100%; margin-top: 1rem">
+            <p>Summary for Thread A</p>
+            <input type="text" placeholder="Enter Text Here" />
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="syp" *ngIf="asset.asset_id == 18885">
+    <p>Title</p>
+    <input placeholder="Enter Your Text" />
+    <p>Content</p>
+    <angular-editor
+      [placeholder]="'Enter text here...'"
+      [config]="config"
+    ></angular-editor>
+  </div>
+  <div class="sa" *ngIf="asset.asset_id == 18886">
+    <iframe [src]="getTrusted(asset.asset_content)"> </iframe>
+  </div>
+</div>

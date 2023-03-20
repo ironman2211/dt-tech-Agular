@@ -1,0 +1,19 @@
+<div class="side" [ngClass]="toggle ? '' : 'expand'">
+  <div class="head">
+    <b *ngIf="!toggle">Journey Board </b>
+    <button (click)="toggleSidebar()">
+      <i class="ri-arrow-right-line" *ngIf="toggle"></i>
+    </button>
+    <button (click)="toggleSidebar()">
+      <i class="ri-arrow-left-line" *ngIf="!toggle"></i>
+    </button>
+  </div>
+  <div class="number" *ngIf="toggle">1</div>
+
+  <ul *ngIf="!toggle">
+    <li class="active">{{ this.task.task_title }}</li>
+    <li *ngFor="let asset of this.task.assets" id="asset.asset_id">
+      {{ asset.asset_title }}
+    </li>
+  </ul>
+</div>

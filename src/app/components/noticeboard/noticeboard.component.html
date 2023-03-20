@@ -1,0 +1,13 @@
+<div class="right" [ngClass]="toggle ? 'expand' : ''">
+    <div class="head">
+        <button (click)="toggleSidebar()"  *ngIf="!toggle">
+            <i class="ri-add-fill"></i>
+
+        </button>
+        <button (click)="toggleSidebar()" style=" transform: rotate(45deg) scale(1.1); "  *ngIf="toggle">
+            <i class="ri-add-fill"></i>
+        </button>
+      <b >Notice Board </b>
+    </div>
+  </div>
+  
